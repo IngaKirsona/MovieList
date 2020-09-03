@@ -14,25 +14,25 @@ class MovieListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
+        
+    // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = true
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return movies.count
     }
-
-//-------pievienot tabulai attelus
+    
+    //-------to add image and text to the cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieListCell", for: indexPath)
-    
+        
         let movie = movies [indexPath.row]
         cell.textLabel?.text = movie.movie
         cell.detailTextLabel?.text = movie.movieYear
@@ -41,28 +41,28 @@ class MovieListTableViewController: UITableViewController {
         
     }
     
-//-------pievienot rindai noteiktu augstumu
+    //-------format row hight
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-//------- lai nospiezot edit varetu filmas parkartot
+    //-------to rearange cells clicking on eddit
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let currentTrack = movies.remove(at: fromIndexPath.row)
         movies.insert(currentTrack, at: to.row)
     }
-
-//------ lai nospiezot edit nebutu redzama delete ikona
+    
+    //------by clicking eddit not to seeing delete icons
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
-
+    
     // MARK: - Navigation
-//-------lai parsutiti movie datus uz nakamo logu
+    //-------to send movie data on other view
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//-------lai redzetu kurs attels pec kartas tiek izvelets
+    //-------to see witch cell is chosen
         if let indexPath = tableView.indexPathForSelectedRow{
             print(indexPath.row)
             let detailVC = segue.destination as! DetailViewController
@@ -70,6 +70,4 @@ class MovieListTableViewController: UITableViewController {
             
         }
     }
-
-
 }
