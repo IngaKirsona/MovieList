@@ -15,14 +15,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieYearLabel: UILabel!
     
     
-    var movie: Movie!
+    var movieTrack: Movie!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if movie != nil {
-            movieImage.image = UIImage(named: movie.poster)
-            movieNameLabel.text = movie.movie
+        if movieTrack != nil {
+            movieImage.image = UIImage(named: movieTrack.poster)
+            movieNameLabel.text = movieTrack.movie
             movieNameLabel.numberOfLines = 0
+            movieYearLabel.text = movieTrack.movieYear
         }
     }
 }
