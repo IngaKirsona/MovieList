@@ -10,20 +10,20 @@ import UIKit
 
 class MovieListTableViewController: UITableViewController {
 
-    var movieList = [
-    "The Great Gatsby - 2013",
-    "Daddy's Home - 2015",
-    "Daddy's Home 2 - 2017",
-    "Sound of Music - 1965",
-    "Focus - 2015",
-    "Pacific Rim Uprising - 2018",
-    "Guardians of the Galaxy Vol. 2  - 2017",
-    "Grown Ups 2 - 2013",
-    "Gravity - 2013",
-    "Avatar - 2009",
-    "47 Meters Down - 2017",
-    "Doctor Strange - 2016"
-    ]
+//    var movieList = [
+//    "The Great Gatsby - 2013",
+//    "Daddy's Home - 2015",
+//    "Daddy's Home 2 - 2017",
+//    "Sound of Music - 1965",
+//    "Focus - 2015",
+//    "Pacific Rim Uprising - 2018",
+//    "Guardians of the Galaxy Vol. 2  - 2017",
+//    "Grown Ups 2 - 2013",
+//    "Gravity - 2013",
+//    "Avatar - 2009",
+//    "47 Meters Down - 2017",
+//    "Doctor Strange - 2016"
+//    ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
