@@ -15,6 +15,14 @@ struct Movie {
     
     static func createMovie() -> [Movie]{
         var movies: [Movie] = []
+        let movieTracks = DataManager.shared.movie
+        let movieYears = DataManager.shared.movieYear
+        let posters = DataManager.shared.poster
+        
+        for index in 0..<movieTracks.count {
+            let mov = Movie(movie: movieTracks[index], movieYear: movieYears[index], poster: posters[index])
+            movies.append(mov)
+        }
         return movies
     }
 }

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-/*class DataManager {
-    static let shared = DataManager {
+class DataManager {
+    static let shared = DataManager()
         var movie = [
             "The Great Gatsby",
             "Daddy's Home",
@@ -51,11 +51,5 @@ import Foundation
             "47 Meters Down - 2017",
             "Doctor Strange - 2016"
         ]
-        
-
-        
-        
-        
-    }
 }
-*/
+
