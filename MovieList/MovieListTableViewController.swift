@@ -10,6 +10,20 @@ import UIKit
 
 class MovieListTableViewController: UITableViewController {
 
+    var movieList = [
+    "The Great Gatsby - 2013",
+    "Daddy's Home - 2015",
+    "Daddy's Home 2 - 2017",
+    "Sound of Music - 1965",
+    "Focus - 2015",
+    "Pacific Rim Uprising - 2018",
+    "Guardians of the Galaxy Vol. 2  - 2017",
+    "Grown Ups 2 - 2013",
+    "Gravity - 2013",
+    "Avatar - 2009",
+    "47 Meters Down - 2017",
+    "Doctor Strange - 2016"
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,18 +43,23 @@ class MovieListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movieList.count
     }
 
-    /*
+//-------pievienot tabulai attelus
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieListCell", for: indexPath)
+        cell.textLabel?.text = movieList[indexPath.row]
+        cell.detailTextLabel?.text = movieList[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.imageView?.image = UIImage(named: movieList[indexPath.row])
         return cell
     }
-    */
+//-------pievienot rindai noteiktu augstumu
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
