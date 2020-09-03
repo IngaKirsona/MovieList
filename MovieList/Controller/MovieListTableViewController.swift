@@ -11,6 +11,7 @@ import UIKit
 class MovieListTableViewController: UITableViewController {
     
     var movies = Movie.createMovie()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,9 @@ class MovieListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = movie.movieYear
         cell.imageView?.image = UIImage(named: movie.poster)
         return cell
+        
     }
+    
 //-------pievienot rindai noteiktu augstumu
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
