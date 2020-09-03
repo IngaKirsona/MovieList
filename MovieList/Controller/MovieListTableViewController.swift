@@ -24,6 +24,8 @@ class MovieListTableViewController: UITableViewController {
 //    "47 Meters Down - 2017",
 //    "Doctor Strange - 2016"
 //    ]
+    
+    var movies = Movie.createMovie()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,16 +45,21 @@ class MovieListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movieList.count
+        return movies.count
     }
 
 //-------pievienot tabulai attelus
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieListCell", for: indexPath)
-        cell.textLabel?.text = movieList[indexPath.row]
-        cell.detailTextLabel?.text = movieList[indexPath.row]
-        cell.textLabel?.numberOfLines = 0
-        cell.imageView?.image = UIImage(named: movieList[indexPath.row])
+        
+//        cell.textLabel?.text = movieList[indexPath.row]
+//        cell.detailTextLabel?.text = movieList[indexPath.row]
+//        cell.textLabel?.numberOfLines = 0
+//        cell.imageView?.image = UIImage(named: movieList[indexPath.row])
+        let movie = movies [indexPath.row]
+        cell.textLabel?.text = movie.movie
+        cell.detailTextLabel?.text = movie.movieYear
+        cell.imageView?.image = UIImage(named: movie.poster)
         return cell
     }
 //-------pievienot rindai noteiktu augstumu
@@ -108,7 +115,8 @@ class MovieListTableViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow{
             print(indexPath.row)
             let detailVC = segue.destination as! DetailViewController
-            detailVC.movieName = movieList[indexPath.row]
+            detailVC.movie = movies[indexPath.row]
+            
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
