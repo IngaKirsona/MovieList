@@ -51,11 +51,7 @@ class MovieListTableViewController: UITableViewController {
 //-------pievienot tabulai attelus
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieListCell", for: indexPath)
-        
-//        cell.textLabel?.text = movieList[indexPath.row]
-//        cell.detailTextLabel?.text = movieList[indexPath.row]
-//        cell.textLabel?.numberOfLines = 0
-//        cell.imageView?.image = UIImage(named: movieList[indexPath.row])
+    
         let movie = movies [indexPath.row]
         cell.textLabel?.text = movie.movie
         cell.detailTextLabel?.text = movie.movieYear
@@ -87,12 +83,13 @@ class MovieListTableViewController: UITableViewController {
     }
     */
 
-    /*
+//------- lai nospiezot edit varetu filmas parkartot
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let currentTrack = movies.remove(at: fromIndexPath.row)
+        movies.insert(currentTrack, at: to.row)
     }
-    */
+
 //------ lai nospiezot edit nebutu redzama delete ikona
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
