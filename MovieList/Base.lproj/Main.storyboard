@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1128.985507246377" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="YUE-Nh-vXh">
             <objects>
-                <viewController id="29p-34-cRJ" sceneMemberID="viewController">
+                <viewController id="29p-34-cRJ" customClass="DetailViewController" customModule="MovieList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ERO-Pl-vg6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-Wd-r8a">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The Great Gatsby - 2013" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-Wd-r8a">
                                         <rect key="frame" x="0.0" y="55" width="300" height="446"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="446" id="OIn-2S-0UD"/>
@@ -112,4 +112,7 @@
             <point key="canvasLocation" x="218.84057971014494" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="The Great Gatsby - 2013" width="764" height="1130"/>
+    </resources>
 </document>
