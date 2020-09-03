@@ -60,7 +60,6 @@ class MovieListTableViewController: UITableViewController {
         return 100
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -87,6 +86,10 @@ class MovieListTableViewController: UITableViewController {
 
     }
     */
+//------ lai nospiezot edit nebutu redzama delete ikona
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -96,14 +99,20 @@ class MovieListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
+//-------lai parsutiti movie datus uz nakamo logu
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//-------lai redzetu kurs attles pec kartas tiek izvelets
+        if let indexPath = tableView.indexPathForSelectedRow{
+            print(indexPath.row)
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.movieName = movieList[indexPath.row]
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

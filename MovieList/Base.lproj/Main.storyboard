@@ -76,7 +76,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The Great Gatsby - 2013" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-Wd-r8a">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The Great Gatsby - 2013" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-Wd-r8a">
                                         <rect key="frame" x="0.0" y="55" width="300" height="446"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="446" id="OIn-2S-0UD"/>
@@ -104,6 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="56H-JP-IX1"/>
                     </view>
                     <navigationItem key="navigationItem" id="WE9-Vb-8kl"/>
+                    <connections>
+                        <outlet property="movieImage" destination="XpK-Wd-r8a" id="8FX-bn-ooN"/>
+                        <outlet property="movieNameLabel" destination="F4a-IT-xuX" id="2Jp-1a-btk"/>
+                        <outlet property="movieYearLabel" destination="3rV-uL-D5B" id="azZ-ys-S55"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bd7-es-HTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
