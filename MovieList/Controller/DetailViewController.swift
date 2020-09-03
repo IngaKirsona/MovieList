@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        movieImage.layer.cornerRadius = 30
         if movieTrack != nil {
             movieImage.image = UIImage(named: movieTrack.poster)
             movieNameLabel.text = movieTrack.movie
