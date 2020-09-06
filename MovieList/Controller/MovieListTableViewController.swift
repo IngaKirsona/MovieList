@@ -53,11 +53,6 @@ class MovieListTableViewController: UITableViewController {
         movies.insert(currentTrack, at: to.row)
     }
     
-    //------by clicking eddit not to seeing delete icons
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-    
     // MARK: - Navigation
     //-------to send movie data on other view
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,4 +65,22 @@ class MovieListTableViewController: UITableViewController {
             
         }
     }
+    
+    //-------to enable delete option
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "Are You sure you want to delete?", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (_) in
+                self.movies.remove(at: indexPath.row)
+                UIView.transition(with: tableView, duration: 1.0, options: .transitionCrossDissolve, animations: {
+                    self.tableView.reloadData()
+                }, completion: nil)
+            }))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    
 }
