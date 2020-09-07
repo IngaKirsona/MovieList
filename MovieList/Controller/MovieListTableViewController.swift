@@ -5,7 +5,6 @@
 //  Created by Inga Kirsona on 03/09/2020.
 //  Copyright © 2020 Inga Kirsona. All rights reserved.
 //
-
 import UIKit
 
 class MovieListTableViewController: UITableViewController {
@@ -66,7 +65,7 @@ class MovieListTableViewController: UITableViewController {
         }
     }
     
-    //-------to enable delete
+    //-------to enable delete option
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "Are You sure you want to delete?", message: nil, preferredStyle: .alert)
@@ -81,6 +80,5 @@ class MovieListTableViewController: UITableViewController {
             self.present(alert, animated: true)
         }
     }
-    
     
 }

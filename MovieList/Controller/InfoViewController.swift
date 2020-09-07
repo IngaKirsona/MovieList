@@ -28,5 +28,4 @@ class InfoViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         print("Dismiss View Controller")
     }
-    
 }
