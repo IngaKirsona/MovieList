@@ -228,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x77-F6-Mud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="720"/>
+            <point key="canvasLocation" x="646" y="718"/>
         </scene>
         <!--App Info-->
         <scene sceneID="f3s-Vz-ZvG">

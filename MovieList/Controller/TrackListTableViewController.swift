@@ -72,7 +72,7 @@ class TrackListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+        return .delete
     }
 
   
@@ -95,6 +95,20 @@ class TrackListTableViewController: UITableViewController {
         }
         
     }
-
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "Are You sure you want to delete?", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (_) in
+                self.songs.remove(at: indexPath.row)
+                UIView.transition(with: tableView, duration: 1.0, options: .transitionCrossDissolve, animations: {
+                    self.tableView.reloadData()
+                }, completion: nil)
+            }))
+            self.present(alert, animated: true)
+        }
+    }
+    
 
 }
