@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieYearLabel: UILabel!
