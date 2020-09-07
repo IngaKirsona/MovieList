@@ -66,7 +66,7 @@ class MovieListTableViewController: UITableViewController {
         }
     }
     
-    //-------to enable delete option
+    //-------to enable delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "Are You sure you want to delete?", message: nil, preferredStyle: .alert)
